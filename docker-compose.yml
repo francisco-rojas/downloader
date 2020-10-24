@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  downloader:
+    build: .
+    volumes:
+      - .:/app
+volumes:
+  bundle:
