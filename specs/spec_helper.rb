@@ -4,7 +4,11 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'webmock/minitest'
 require 'minitest/pride'
+require 'ostruct'
 require 'pry'
+
+require_relative '../lib/downloader'
+require_relative '../lib/file_processor'
 
 WebMock.disable_net_connect!
 
