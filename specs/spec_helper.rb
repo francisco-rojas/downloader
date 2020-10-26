@@ -13,7 +13,7 @@ def spec_directory
 end
 
 def fixtures_directory
-  spec_directory + '/fixtures'
+  "#{spec_directory}/fixtures"
 end
 
 def fixture_file(filename)
@@ -21,7 +21,7 @@ def fixture_file(filename)
 end
 
 def output_directory
-  spec_directory + '/output'
+  "#{spec_directory}/output"
 end
 
 def output_file(filename)
