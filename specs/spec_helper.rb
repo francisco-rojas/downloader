@@ -8,6 +8,7 @@ require 'ostruct'
 require 'pry'
 
 require_relative '../lib/downloader'
+require_relative '../lib/image_downloader'
 require_relative '../lib/file_processor'
 
 WebMock.disable_net_connect!

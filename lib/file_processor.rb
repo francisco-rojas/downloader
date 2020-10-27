@@ -15,7 +15,7 @@ class FileProcessor
 
   def process
     File.foreach(source_file) do |line|
-      Downloader.new(line)
+      ImageDownloader.new(line, destination_folder).download
     end
   end
 end
