@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'downloader'
+
 ##
 # Downloads the images from the url provided into the destination_directory
 class ImageDownloader < Downloader

@@ -8,6 +8,10 @@ describe ImageDownloader do
   let(:output_file_path) { output_file('sample1.png') }
   let(:downloader) { ImageDownloader.new(url, output_directory) }
 
+  before do
+    File.new(output_file_path) if File.exist?(output_file_path)
+  end
+
   describe 'when resource is located in root path' do
     let(:url) { 'http://www.example.com/' }
 

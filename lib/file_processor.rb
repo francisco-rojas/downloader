@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'image_downloader'
+
 ##
 # Reads the urls from the source file
 class FileProcessor
@@ -14,6 +16,18 @@ class FileProcessor
   end
 
   def process
+    # TODO: use sidekiq to retrieve images in background jobs or threads to perform parallel requests
+    File.foreach(source_file) do |line|
+      begin
+        ImageDownloader.new(line.chomp, destination_folder).download
+      rescue => e
+        puts "#{line} failed with #{e.message}"
+        next
+      end
+    end
+  end
+
+  def process!
     File.foreach(source_file) do |line|
       ImageDownloader.new(line, destination_folder).download
     end

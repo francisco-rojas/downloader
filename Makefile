@@ -1,5 +1,5 @@
 dc=docker-compose $(1)
-dc-run=$(call dc, run --service-ports --rm downloader $(1))
+dc-run=$(call dc, run --rm downloader $(1))
 
 build: ## Build docker image
 	$(call dc, build)
